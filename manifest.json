@@ -1,0 +1,24 @@
+{
+  "name": "ChatGPT Prompt Injector",
+  "description": "Automatically injects brand-specific preset instructions into ChatGPT prompts.",
+  "version": "1.0",
+  "manifest_version": 3,
+
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["https://chat.openai.com/*"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

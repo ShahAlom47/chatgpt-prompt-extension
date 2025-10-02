@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AutoPrompt Injector</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        width: 320px;
+      }
+
+      h3 {
+        margin-top: 15px;
+      }
+
+      select,
+      input,
+      textarea,
+      button {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+        box-sizing: border-box;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 10px;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3px 0;
+        border-bottom: 1px solid #ccc;
+      }
+
+      li button {
+        width: auto;
+        padding: 2px 5px;
+        margin-left: 5px;
+      }
+
+      form {
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      form input, form textarea {
+        margin-bottom: 5px;
+      }
+
+      small {
+        font-size: 11px;
+        color: #555;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Choose Active Action</h3>
+    <select id="actionSelect">
+      <option value="">-- Select Action --</option>
+    </select>
+    <button id="saveBtn">Save Active</button>
+    <hr />
+    <p>
+      <small>Selected action will be used in ChatGPT prompts automatically.</small>
+    </p>
+
+    <h3>Manage Actions</h3>
+    <ul id="actionList"></ul>
+    <button id="showAddFormBtn">Add New Action</button>
+
+    <!-- Add/Edit Form -->
+    <form id="actionForm" class="hidden">
+      <h4 id="formTitle">Add New Action</h4>
+      <input type="text" id="actionName" placeholder="Action Name" required />
+      <textarea id="actionDesc" placeholder="Action Description"></textarea>
+      <button type="submit" id="formSubmitBtn">Save Action</button>
+      <button type="button" id="formCancelBtn">Cancel</button>
+    </form>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
