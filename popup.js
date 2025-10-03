@@ -35,6 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const enabled = toggleSwitch.checked;
     chrome.storage.local.set({ extensionEnabled: enabled }, () => {
       console.log("Extension enabled:", enabled);
+
+      // ছোট নোটিফিকেশন
+      const msg = enabled ? "Extension Enabled ✅" : "Extension Disabled ❌";
+      alert(msg);
     });
   });
 
