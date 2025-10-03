@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const saveActiveBtn = document.getElementById("saveBtn");
   const actionList = document.getElementById("actionList");
   const addActionBtn = document.getElementById("showAddFormBtn"); // fixed id
+  const toggleSwitch = document.getElementById("toggleExtension"); // ✅ toggle
 
   const defaultActions = [
     { name: "Generate Product Title", description: "Create a catchy product title for website." },
@@ -10,10 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Generate SEO Meta Description", description: "Generate SEO-friendly meta description, max 160 chars." }
   ];
 
-  // Load actions and activeAction
-  chrome.storage.local.get(["actions", "activeAction"], (data) => {
+  // Load actions, activeAction, toggle state
+  chrome.storage.local.get(["actions", "activeAction", "extensionEnabled"], (data) => {
     const actions = data.actions || defaultActions;
     const active = data.activeAction || "";
+    const enabled = data.extensionEnabled !== false; // default = true
+
+    // Set toggle state
+    toggleSwitch.checked = enabled;
 
     actions.forEach(action => {
       addActionToUI(action);
@@ -22,6 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
       opt.textContent = action.name;
       if (action.name === active) opt.selected = true;
       actionSelect.appendChild(opt);
+    });
+  });
+
+  // ✅ Toggle On/Off
+  toggleSwitch.addEventListener("change", () => {
+    const enabled = toggleSwitch.checked;
+    chrome.storage.local.set({ extensionEnabled: enabled }, () => {
+      console.log("Extension enabled:", enabled);
     });
   });
 
