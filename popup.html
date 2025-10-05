@@ -7,14 +7,19 @@
   <body>
     <!-- ✅ Title bar + On/Off toggle -->
     <div class="header">
-      <h3>
-        <img
+      <div class="header-title">
+      <div style="display: flex; align-items: center; gap: 8px">
+            <img
           src="icons/icon48.png"
           alt="Icon"
           style="vertical-align: middle; width: 20px; height: 20px"
         />
+          <h3>
+        
         Prompt Injector
       </h3>
+      </div>
+    
       <label class="switch">
         <input type="checkbox" id="toggleExtension" />
         <span class="slider"></span>
