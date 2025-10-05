@@ -1,0 +1,236 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  width: 320px;
+}
+
+h3 {
+  margin-top: 15px;
+}
+
+select,
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+li button {
+  width: auto;
+  padding: 2px 5px;
+  margin-left: 5px;
+}
+
+form {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+form input,
+form textarea {
+  margin-bottom: 5px;
+}
+
+small {
+  font-size: 11px;
+  color: #555;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.block {
+  display: block;
+}
+
+
+/* ✅ Toggle switch styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+
+.select-box {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 5px;
+}
+.save-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* how  to use   */
+/* ✅ How to Use section styles */
+.how-to-use {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.how-to-btn {
+  background-color: #edd340;
+  color: rgb(1, 0, 0);
+  border: none;
+  padding: 8px 12px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.how-to-btn:hover {
+  background-color: #ccc91e;
+}
+
+.how-to-content {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 10px;
+  color: #333;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.add-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s;
+}   
+
+.cancel-or-delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+li .edit-button {
+  background-color: #ba931f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+li remove-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+li{
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li .action-name {
+    flex-grow: 1;
+    font-weight: bold;
+}

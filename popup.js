@@ -78,10 +78,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const saveBtn = document.createElement("button");
     saveBtn.textContent = "Save";
+    saveBtn.classList.add("save-button");
 
     const cancelBtn = document.createElement("button");
     cancelBtn.textContent = "Cancel";
-    cancelBtn.style.marginLeft = "5px";
+    cancelBtn.style.width = "100%";
+    cancelBtn.classList.add("cancel-or-delete-button");
 
     formContainer.appendChild(title);
     formContainer.appendChild(nameInput);
@@ -143,13 +145,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nameSpan = document.createElement("span");
     nameSpan.textContent = action.name;
+    nameSpan.classList.add("action-name");
 
     const editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
+    editBtn.classList.add("edit-button");
     editBtn.addEventListener("click", () => showActionForm("Edit Action", action));
 
     const removeBtn = document.createElement("button");
     removeBtn.textContent = "Remove";
+    removeBtn.classList.add("cancel-or-delete-button");
     removeBtn.addEventListener("click", () => {
       if (!confirm("Are you sure you want to delete this action?")) return;
       chrome.storage.local.get(["actions"], (data) => {
@@ -169,3 +174,9 @@ document.addEventListener("DOMContentLoaded", () => {
     actionList.appendChild(li);
   }
 });
+
+
+     document.getElementById("howToBtn").addEventListener("click", () => {
+        const content = document.getElementById("howToContent");
+        content.classList.toggle("hidden");
+      });
